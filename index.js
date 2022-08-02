@@ -5,11 +5,13 @@ const port = 3000
 const bodyParser = require('body-parser');
 const {User} = require("./models/User");
 
+const config = require("./config/key");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://taeyun:woogi101^^@boilerplate.vsywumc.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true //useCreateIndex: true, useFindAndModify: false
   }).then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
