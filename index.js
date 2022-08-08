@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.post('/register', (req, res) =>  {
+app.post('/register', (req, res) => {
     const user = new User(req.body);
 
     user.save((err, userInfo) => {
