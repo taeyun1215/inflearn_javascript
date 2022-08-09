@@ -270,7 +270,7 @@
     console.log(name ) // 결과 Kim Lee Park
     ```
     
-- 배열 반복문
+- 배열 반복문 
     
     ```jsx
     const names = ['Kim', 'Lee', 'Park']
