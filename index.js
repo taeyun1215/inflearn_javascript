@@ -3,10 +3,11 @@ const app = express()
 const port = 3000
 
 const bodyParser = require('body-parser');
-const config = require("./config/key");
+const config = require('./config/key');
 const cookieParser = require('cookie-parser');
 
-const { User } = require("./models/User");
+const { User } = require('./models/User');
+const { auth } = require('./middleware/auth')
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -71,6 +72,10 @@ app.post('/login', (req, res) => {
     })
 
   })
+
+})
+
+app.get ('/api/users/auth', auth, (req, res) => {
 
 })
 
