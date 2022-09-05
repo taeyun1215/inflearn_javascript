@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3001
 
 const bodyParser = require('body-parser');
 const config = require('./config/key');
@@ -23,6 +23,10 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.get('/api/hello', (req, res) => {
+  res.send('happy today')
 })
 
 app.post('/register', (req, res) => {
