@@ -4,6 +4,8 @@ import { loginUser } from '../../../_actions/user_actions'
 
 function LoginPage(props) {
 
+  // const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const [Email, setEmail] = useState("")
@@ -28,7 +30,8 @@ function LoginPage(props) {
     dispatch(loginUser(body))
       .then(response => {
         if (response.payload.loginSuccess) {
-          props.history.push('/');
+          props.history.push("/");
+          // navigate('/');
         } else {
           alert('Error')
         }
